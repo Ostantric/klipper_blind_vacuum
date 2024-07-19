@@ -17,13 +17,28 @@ This system is designed as a more affordable alternative to my belt printer clos
 # Configure  "printer.cfg"
 add the module name
 ``` bash 
+# Configuration for Blind Vacuum System
 [blind_vacuum myvacuum]
-vacuum_pump_pin:P0.10 #digital pin for vacuum pump relay
-valve_open_pin: P1.25 #PWM pin for Valve open
-valve_close_pin: P1.27 #PWM pin for Valve close
-vacuum_timer:172800 #watchdog timer in seconds. With good seals -20inhg should be maintained for at least 2 days.(system default is 600 seconds)
-#pump_on_time: 2 #Amount of time requires to create rough vacuum. (Although it usually takes 1-2 seconds to create vacuum, default is 8 seconds because of valve operations)
-#valve_close_time: 3 #Motorized valves takes a little while to close. In my case it's 3 seconds. Default is 6, if you are using
+# Pin configuration for the vacuum pump relay
+vacuum_pump_pin: P0.10  # Digital pin for the vacuum pump relay control
+
+# Pin configuration for the valve operations
+# These are the PWM pins coming from the H bridge driver. Its going to be either 1 or 0, we don't need to slow down openning or closing so no PWM needed!
+valve_open_pin: P1.25   # PWM pin for opening the valve
+valve_close_pin: P1.27  # PWM pin for closing the valve
+
+# Watchdog timer for the vacuum system
+vacuum_timer: 172800    # Watchdog timer in seconds. With good seals, -20 inHg should be maintained for at least 2 days. (System default is 600 seconds)
+
+# Optional configuration parameters (uncomment and set if needed)
+# pump_on_time: 2       # Amount of time required to create rough vacuum. Default is 8 seconds due to valve operations. (Typically takes 1-2 seconds)
+# valve_close_time: 3   # Time taken by motorized valves to close. Default is 6 seconds. (In my case, it's 3 seconds)
+
+# Additional notes:
+# - Ensure proper pin configuration matching your hardware setup. Motorized Valves need H bridge to run both directions!
+# - Adjust the timer settings based on your specific system behavior. Ideally, you don't want to go below -13 inHg. Since there is no vacuum sensor, perform a manual test as follows:
+#   	1. Start a timer and observe when the vacuum bed no longer effectively holds the build plate.
+#   	2. Use half of this observed time as the vacuum timer (watchdog timer) setting.
 ```
 # Built-in Gcode commands
 Starts the Watchdog timer, turns on the pump, and adds delays for valve operation based on timing parameters defined in the configuration.
