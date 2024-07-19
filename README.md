@@ -3,7 +3,7 @@ This system is designed as a more affordable alternative to my belt printer clos
 
 <img src="v24_vacuum_bed.png">
 
-#System Requirements
+# System Requirements
 
 * [Motorized Valve](https://www.amazon.com/Motorized-Valve-Stainless-U-S-Solid/dp/B06XXPZHVB/ref=sr_1_3?sr=8-3)
 * [H bridge motor driver](https://www.amazon.com/HiLetgo-BTS7960-Driver-Arduino-Current/dp/B00WSN98DC/ref=sr_1_6?sr=8-6)
