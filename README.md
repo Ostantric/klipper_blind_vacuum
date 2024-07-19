@@ -11,6 +11,8 @@ This system is designed as a more affordable alternative to my belt printer clos
 * [Vacuum BED](https://discord.gg/tRkB7DqXUE) and contact me
 * AC or DC RELAY to control the vacuum pump
 
+![](vacuum.gif)
+
 ### CODE TODOs
 * Improve gcode commands
 * Prioritize watchdog timer
