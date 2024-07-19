@@ -1,6 +1,8 @@
 # Open loop Vacuum System For Klipper
 This system is designed as a more affordable alternative to my belt printer closed-loop vacuum systems and can be used in any printer. It requires a vacuum pump and a motorized valve. The system operates without any sensors to read the vacuum level or a tank to adjust the vacuum level as needed. If you need a more advanced system, please refer to my closed-loop vacuum system for Klipper. Tested and validated on my Voron V2.4.
+
 <img src="v24_vacuum_bed.png">
+
 #System Requirements
 
 * [Motorized Valve](https://www.amazon.com/Motorized-Valve-Stainless-U-S-Solid/dp/B06XXPZHVB/ref=sr_1_3?sr=8-3)
