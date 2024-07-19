@@ -85,6 +85,7 @@ class BlindVacuum:
         self.is_watchdog_activate=False
         if self.timer_registered:
             self.reactor.unregister_timer(self.vacuum_watchdog_timer)
+            self.timer_registered=False
 
     def cmd_FORCE_VACUUM_ON(self,gcmd):
         toolhead = self.printer.lookup_object('toolhead')
